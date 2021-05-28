@@ -13,12 +13,15 @@ figure(1)
 for i = 1:length(N)
     subplot(5,2,i*2-1)
     polarplot(th,I(i,:),'Color','k','LineWidth',1)
+     title(['N =' num2str(N(i)) ])
     axis off
 end
 for i = length(N)+1:length(N)*2
     subplot(5,2,(i-length(N))*2)
     polarplot(th,I(i-length(N),:),'Color','k','LineWidth',1)
+     title(['N =' num2str(N(i-length(N))) ])
     rlim([0 .1])
     axis off
 end
 set(gcf,'color','w');
+set(gcf,'position',[500,0,600,1000]);
